@@ -1,0 +1,73 @@
+.navbar{
+    background :#33b5e5 ;
+}
+#accountbtn{
+    background:#33b5e5;
+    text-decoration: none;
+    color:white;
+} 
+span{
+    color:White;
+}
+.container .input{
+    border : 0;
+    outline :none;
+
+}
+.search_wrap{
+    margin: 10px auto;
+}
+.search_wrap .search_box{
+ position: relative;
+ width: 300px;
+ height:40px;
+
+}
+.search_wrap .search_box .input{
+    position :absolute;
+    top :0;
+    left:0;
+    width:100%;
+    height:100%;
+    padding:10px 20px;
+    border-radius: 3px;
+    font-size: 15px;
+}
+.search_wrap .search_box .btn{
+    position :absolute;
+    top :0;
+    right:0;
+    width:60px;
+    height:100%;
+    background: #8b7d77;
+    z-index:1;
+    cursor:pointer;
+}
+
+/* .search_wrap .search_box .search_wrap_1 .btn{
+    right:0;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+
+}
+.search_wrap .search_box .search_wrap_1 .input{
+    padding-right:80px;
+}
+.search_wrap .search_box .search_wrap_1 .btn{
+    left:0;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+
+} */
+.footer{
+    margin-top:100%;
+    background-color:#33b5e5 ;
+    position:fixed;
+    bottom:0;
+    width:100%;
+    display :flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
