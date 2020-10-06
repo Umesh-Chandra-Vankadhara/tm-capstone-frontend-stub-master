@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import { NgForm } from '@angular/forms';
 //import {AppDataService} from './_shared/_services/app-data.service';
 import { faSearch, faShoppingCart, faUser } from '@fortawesome/free-solid-svg-icons';
 
@@ -13,6 +14,20 @@ export class AppComponent implements OnInit {
   faUserIcon= faUser;
   faSearchIcon =faSearch;
 
+  showModal: boolean;
+  // showModalOne: boolean=false;
+   submitted = false;
+   signupcard:boolean;
+   signincard:boolean= true;
+  
+   
+   email:string;
+   password:string;
+   mobileNumber:string;
+   confirmPassword:string;
+   lastName:string;
+   firstName:string;
+
   constructor() {
     
  }
@@ -26,4 +41,34 @@ export class AppComponent implements OnInit {
   closeSubMenus() {
 
   }
+  show()
+  {
+    // Show-Hide Modal Check
+    this.showModal = true;
+    this.signincard=true;
+    this.signupcard=false;
+  }
+
+  hide()
+  {
+    this.showModal = false;
+  }
+
+  onSubmit(credentials:NgForm){
+    console.log(credentials);
+  }
+
+  signupUser(credentials:NgForm){
+    console.log(credentials);
+  }
+ 
+  onSigninClick(){
+    this.signupcard=false;
+    this.signincard=true;
+   }
+  
+  onSignupClick(){
+   this.signincard =false;
+   this.signupcard=true;
+   }
 }

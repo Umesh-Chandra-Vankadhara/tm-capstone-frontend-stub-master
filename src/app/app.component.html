@@ -1,10 +1,11 @@
+
 <div class="navbar">
     <div><fa-icon [icon]="faShoppingCart" style="color: white;"></fa-icon>
-        <span>
+        <span id="brand">
             upGrad EShop
         </span>
-    </div>
-    <div class="container">
+   </div>
+  <div class="container">
          <div class="search_wrap">
              <div class="search_box">
                  <input type="text" class="input" placeholder="Type to search Products.." >
@@ -13,16 +14,172 @@
                  </div>
              </div>
         </div>
+ </div>
+ <div class="dropdown">
+        <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a id="accountbtn"><fa-icon [icon]="faUserIcon"></fa-icon>  Account </a>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right " aria-labelledby="dropdownMenuButton">
+            <a type="button" id="signinbtn" class=" dropdown-item" (click) = "show()">Sign in</a>
+        </div>
+        <div [style.display]="showModal ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+         <div class="modal-dialog">
+             <div class="modal-content">
+                 <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal" (click) = "hide()">&times;</button>
+                 </div>
+                 <div class="modal-body">
+                     <form (ngSubmit)='onSubmit(signinForm.value)' #signinForm ="ngForm">
+                         <button class="btn btn-primary" (click)="onSigninClick()" id="signin"> sign in</button> 
+                         <button class="btn"  (click)="onSignupClick()"  id="signup" >sign up</button><br/><br/>
+                         <!-- signin modal -->
+                    
+                         <div id="signincard" [style.display]="signincard ? 'block' : 'none'">
+                             <div class="card">
+                                 <h5 class="card-header card text-center">Sign in</h5>
+                                  <div class="card-body">
+                                     <div class="form-group row">
+                                         <label for="email" class="col-sm-3 col-form-label col-form-label-sm"><strong>Email ID:</strong></label>
+                                         <div class="col-sm-9">
+                                             <input type="email" class="form-control" name="email" id="email" required [(ngModel)] ="email" #emailVar="ngModel"
+                                             [ngClass]="{'is-invalid':(emailVar.touched || emailVar.dirty) && !emailVar.valid }"/>
+                                             <span class="invalid-feedback">
+                                                 <span *ngIf="emailVar.errors?.required">
+                                                     Email is requried.
+                                                 </span>
+                                                 <span *ngIf="emailVar.errors?.email">
+                                                     please enter a valid email.
+                                                 </span>
+                                             </span>
+                                         </div>
+                                     </div>
+                                     <div class="form-group row">
+                                         <label for="password" class="col-sm-3 col-form-label col-form-label-sm"><strong>Password:</strong></label>
+                                         <div class="col-sm-9">
+                                             <input type="password" class="form-control" name="password" id="password" required [(ngModel)] ="password" #passwordVar="ngModel"
+                                             [ngClass]="{ 'is-invalid':(passwordVar.touched || passwordVar.dirty) && !passwordVar.valid }" />
+                                             <span class="invalid-feedback">
+                                                 <span *ngIf="passwordVar.errors?.required">
+                                                     Please enter password.
+                                                 </span>
+                                                 <span *ngIf="passwordVar.errors?.minlength">
+                                                     Password must be at least 6 characters long.
+                                                 </span>
+                                             </span>
+                                         </div>
+                                     </div>
+                                     <button id="btnsignin"class="btn btn-primary" [disabled]="!signinForm.valid">Sign in</button>
+                                 </div>
+                             </div>
+                        </div>
+                 </form>
+                 
+                 <!-- sign up modal -->
+                 
+                 <diV id="signupcard" [style.display]="signupcard ? 'block' : 'none'">
+                     <div class="card" >
+                         <h5 class="card-header card text-center">Sign up</h5>
+                         <div class="card-body">
+                             <form #signupForm="ngForm" (ngSubmit)="signupUser(signupForm.value)">
+                                 <div class="form-group row">
+                                     <label class="col-sm-3 col-form-label col-form-label-sm">First Name:</label>
+                                     <div class="col-sm-9">
+                                         <input type="text" name="firstName" class="form-control" id="firstName" #firstVar="ngModel" [(ngModel)]="firstName"  required
+                                         [ngClass]="{ 'is-invalid':(firstVar.touched || firstVar.dirty) && !firstVar.valid }" />
+                                         <span class="invalid-feedback">
+                                             <span *ngIf="firstVar.errors?.required">
+                                                FirstName is required
+                                             </span>
+                                         </span>
+                                     </div>
+                                 </div>
+                                 <div class="form-group row">
+                                     <label class="col-sm-3 col-form-label col-form-label-sm">Last Name:</label>
+                                     <div class="col-sm-9">
+                                         <input type="text"  id="lastName"class="form-control" name="lastName" #lastVar="ngModel" [(ngModel)]="lastName" />
+                                     </div>
+                                 </div>
+                                 <div class="form-group row">
+                                     <label class="col-sm-3 col-form-label col-form-label-sm">Email ID:</label>
+                                     <div class="col-sm-9">
+                                         <input type="text" name="email" id="email1" class="form-control" #emailVars="ngModel" [(ngModel)]="email"   required 
+                                         [ngClass]="{'is-invalid':(emailVars.touched || emailVars.dirty) && !emailVars.valid }"/>
+                                         <span class="invalid-feedback">
+                                             <span *ngIf="emailVars.errors?.required">
+                                                 Email id is requried.
+                                             </span>
+                                             <span *ngIf="emailVars.errors?.email">
+                                                 please enter a valid email.
+                                             </span>
+                                         </span>
+                                     </div>
+                                 </div>
+                                 <div class="form-group row">
+                                     <label class="col-sm-3 col-form-label col-form-label-sm">Mobile Number:</label>
+                                     <div class="col-sm-9">
+                                         <input type="text" name ="mobile" id="moblie" class="form-control" #mobileVar="ngModel" [(ngModel)]="mobileNumber" required  
+                                         [ngClass]="{ 'is-invalid':(mobileVar.touched || mobileVar.dirty) && !mobileVar.valid }" />
+                                         <span class="invalid-feedback">
+                                             <span *ngIf="mobileVar.errors?.required">
+                                                 Mobile number is requried.
+                                             </span>
+                                             <span *ngIf="mobileVar.errors?.minlength">
+                                                Mobile must be 10 characters long.
+                                             </span>
+                                         </span>
+                                     </div>
+                                 </div>
+                                 <div class="form-group row">
+                                      <label class="col-sm-3 col-form-label col-form-label-sm">Password:</label>
+                                     <div class="col-sm-9">
+                                     <input type="password" name="password" id="password1"class="form-control" #passwordVars="ngModel"  required minlength="5" appPasswordPatre
+                                     [(ngModel)]="password"  [ngClass]="{ 'is-invalid':(passwordVars.touched || passwordVars.dirty) && !passwordVars.valid }" />
+                                     <span class="invalid-feedback">
+                                        <span *ngIf="passwordVars.errors?.required">
+                                            Please enter password.
+                                        </span>
+                                        <span *ngIf="passwordVars.errors?.minlength">
+                                        Password should have minimum 5 characters, at least 1 uppercase letter, 1 lowercase
+                                        letter and 1 number
+                                        </span>
+                                    </span>
+                                    
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                <label class="col-sm-3 col-form-label col-form-label-sm">Confirm Password:</label>
+                                <div class="col-sm-9">
+                                    <input type="password" name="confirmPassword" id="confirmPassword"class="form-control" #confirmVar="ngModel" [(ngModel)]="confirmPassword" required  
+                                    [ngClass]="{ 'is-invalid':(confirmVar.touched || confirmVar.dirty) && !confirmVar.valid }" />
+                                    <span class="invalid-feedback">
+                                        <span *ngIf="confirmVar.errors?.required">
+                                            Please enter password.
+                                        </span>
+                                        <span *ngIf="confirmVar.errors?.minlength">
+                                            Password must be at least 6 characters long.
+                                        </span>
+                                    </span>
+                                    
+                                </div>
+                                </div>
+                                <button type="submit" id="btnsignup" class=" btn btn-primary text-center" [disabled]="!signupForm.value">Sign up</button>
+                            </form>
+                        </div>
+                    </div>
+            </diV>
+        </div>
+        </div>
+    </div> 
     </div>
-    <div>
-         <a id="accountbtn">  <fa-icon [icon]="faUserIcon"></fa-icon>  Account </a>
     </div>
+
 </div>
+
 <div class="footer">
     <div>
       Copyright &copy; 2020 All Rights Reserved
     </div>
     <div>
-       Designed & Developed for upGrad
+       Designed & Developed for <a href="https://www.upgrad.com/" style="text-decoration: none; color:white">upGrad</a>
     </div>
 </div>

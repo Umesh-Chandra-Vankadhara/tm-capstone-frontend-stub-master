@@ -1,12 +1,15 @@
 .navbar{
-    background :#33b5e5 ;
+    background : #007bff ;
+    
 }
 #accountbtn{
-    background:#33b5e5;
+    background: #007bff;
     text-decoration: none;
     color:white;
+    
 } 
-span{
+
+#brand{
     color:White;
 }
 .container .input{
@@ -16,6 +19,7 @@ span{
 }
 .search_wrap{
     margin: 10px auto;
+   
 }
 .search_wrap .search_box{
  position: relative;
@@ -39,35 +43,77 @@ span{
     right:0;
     width:60px;
     height:100%;
-    background: #8b7d77;
+    /* background: #8b7d77; */
     z-index:1;
     cursor:pointer;
 }
 
-/* .search_wrap .search_box .search_wrap_1 .btn{
-    right:0;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
-
-}
-.search_wrap .search_box .search_wrap_1 .input{
-    padding-right:80px;
-}
-.search_wrap .search_box .search_wrap_1 .btn{
-    left:0;
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
-
-} */
 .footer{
     margin-top:100%;
-    background-color:#33b5e5 ;
+    background-color: #007bff ;
     position:fixed;
     bottom:0;
     width:100%;
     display :flex;
     justify-content: space-between;
     align-items: center;
+    color:white;
+}
 
 
+#signin{
+  
+    width:50%;
+ }
+ #signup{
+     width:50%;
+     background:darkgrey;
+ }
+ 
+ /* #signinbtn{
+     float: right;
+     color:white;
+ } */
+ label{
+     padding-left: 5%;
+ }
+ #forgotpass{
+     text-decoration: none;
+ }
+ #btnsignin{
+     margin-left:30%;
+     width:50%;
+ }
+ #signincard{
+     width:100%;
+ 
+ }
+ #signbtn{
+     padding-left: 2%;
+     text-decoration: none;
+ }
+ p{
+     text-align:center;
+ }
+ 
+ 
+ #resetPasswordCard{
+     width: 100%;
+ }
+ input{
+     width:100%;
+     margin-left: 5%;
+ }
+ #btnsignup{
+     margin-left: 31%;
+     width:40%;
+ }
+ #btnreset{
+     margin-left: 31%;
+     width:60%;
+ }
+ 
+#dropdownMenuButton{
+    margin-left:1220px;
+   
 }
