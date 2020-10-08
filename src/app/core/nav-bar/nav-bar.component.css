@@ -1,0 +1,97 @@
+.view{
+    display : flex;
+    justify-content: space-between;
+    background : #007bff ;
+    margin:10px auto;
+   
+}
+#brand{
+    color:White;
+}
+.container .input{
+    border : 0;
+    outline :none;
+
+}
+.search_wrap{
+    margin: 10px auto;
+    margin-left: 35%;
+   
+}
+.search_wrap .search_box{
+ position: relative;
+ width: 300px;
+ height:40px;
+
+}
+.search_wrap .search_box .input{
+    position :absolute;
+    top :0;
+    left:0;
+    width:95%;
+    padding:10px 20px;
+    border-radius: 3px;
+    font-size: 15px;
+}
+.search_wrap .search_box .btn{
+    position :absolute;
+    top :0;
+    right:0;
+    width:60px;
+    height:100%;
+    /* background: #8b7d77; */
+    z-index:1;
+    cursor:pointer;
+}
+
+#navbarDropdownMenuLink{
+    color :white;
+    background-color: #007bff;
+    float: right;
+}
+
+#signin{
+    width:50%;
+ }
+ #signup{
+     width:50%;
+     background:darkgrey;
+ }
+
+ label{
+     padding-left: 5%;
+ }
+
+ #btnsignin{
+     margin-left:30%;
+     width:50%;
+ }
+ #signincard{
+     width:100%;
+ 
+ }
+ #signbtn{
+     padding-left: 2%;
+     text-decoration: none;
+ }
+ p{
+     text-align:center;
+ }
+ #accountbtn{
+    background: #007bff;
+    text-decoration: none;
+    color:white;
+    
+}
+input{
+     width:100%;
+     margin-left: 5%;
+ }
+ #btnsignup{
+     margin-left: 31%;
+     width:40%;
+ }
+ #btnreset{
+     margin-left: 31%;
+     width:60%;
+ }

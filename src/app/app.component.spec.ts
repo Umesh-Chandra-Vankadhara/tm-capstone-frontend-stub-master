@@ -1,7 +1,7 @@
 import {TestBed, async} from '@angular/core/testing';
 import {RouterTestingModule} from '@angular/router/testing';
 import {AppComponent} from './app.component';
-import {UiElementsModule} from './_shared/_modules/ui-elements.module';
+// import {UiElementsModule} from './shared/modules/ui-elements';
 import {NO_ERRORS_SCHEMA} from '@angular/core';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
 
@@ -9,7 +9,8 @@ describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule, UiElementsModule,HttpClientTestingModule
+        // RouterTestingModule, UiElementsModule,HttpClientTestingModule
+        RouterTestingModule,HttpClientTestingModule
       ],
       declarations: [
         AppComponent

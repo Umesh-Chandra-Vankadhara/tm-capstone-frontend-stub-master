@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { NgForm } from '@angular/forms';
-//import {AppDataService} from './_shared/_services/app-data.service';
+import {AppDataService} from './shared/services/app-data.service';
 import { faSearch, faShoppingCart, faUser } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -15,7 +15,6 @@ export class AppComponent implements OnInit {
   faSearchIcon =faSearch;
 
   showModal: boolean;
-  // showModalOne: boolean=false;
    submitted = false;
    signupcard:boolean;
    signincard:boolean= true;
@@ -28,10 +27,10 @@ export class AppComponent implements OnInit {
    lastName:string;
    firstName:string;
 
-  constructor() {
+//   constructor() {
     
- }
-//  constructor( private appDataService: AppDataService) {}
+//  }
+ constructor( private appDataService: AppDataService) {}
 
 
   ngOnInit(): void {
