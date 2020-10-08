@@ -1,10 +1,10 @@
 <div class="view">
     <div>
         <nav class="navbar">
-            <a class="navbar-brand" href="#" style="color: white;">
+            <div class="navbar-brand" style="color: white;">
                 <fa-icon [icon]="faShoppingCart" style="color: white;" class="d-inline-block align-top"></fa-icon>
               upGrad Eshop
-            </a>
+            </div>
           </nav>
     </div>
     <div class="container">
@@ -46,53 +46,13 @@
                                   <button class="nav-link" id="signup-tab"  (click)="onSignupClick()" data-toggle="pill"  role="tab" aria-controls="pills-sign up" aria-selected="false">Sign up</button>
                                 </li>
                             </ul>
+                            
                             <!-- signin modal -->
-<!--                        
-                            <div id="signincard" [style.display]="signincard ? 'block' : 'none'">
-                                <div class="card">
-                                    <h5 class="card-header card text-center" style="height: 30;">Sign in</h5>
-                                     <div class="card-body">
-                                        <div class="form-group row">
-                                            <label for="email" class="col-sm-3 col-form-label col-form-label-sm"><strong>Email ID:</strong></label>
-                                            <div class="col-sm-9">
-                                                <input type="email" class="form-control" name="email" id="email" required [(ngModel)] ="email" #emailVar="ngModel"
-                                                [ngClass]="{'is-invalid':(emailVar.touched || emailVar.dirty) && !emailVar.valid }"/>
-                                                <span class="invalid-feedback">
-                                                    <span *ngIf="emailVar.errors?.required">
-                                                        Email is requried.
-                                                    </span>
-                                                    <span *ngIf="emailVar.errors?.email">
-                                                        please enter a valid email.
-                                                    </span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="password" class="col-sm-3 col-form-label col-form-label-sm"><strong>Password:</strong></label>
-                                            <div class="col-sm-9">
-                                                <input type="password" class="form-control" name="password" id="password" required [(ngModel)] ="password" #passwordVar="ngModel"
-                                                [ngClass]="{ 'is-invalid':(passwordVar.touched || passwordVar.dirty) && !passwordVar.valid }" />
-                                                <span class="invalid-feedback">
-                                                    <span *ngIf="passwordVar.errors?.required">
-                                                        Please enter password.
-                                                    </span>
-                                                    <span *ngIf="passwordVar.errors?.minlength">
-                                                        Password must be at least 6 characters long.
-                                                    </span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <button id="btnsignin"class="btn btn-primary" [disabled]="!signinForm.valid">Sign in</button>
-                                    </div>
-                                </div>
-                           </div> -->
-                                     
-                           <div id="signincard" [style.display]="signincard ? 'block' : 'none'">
-                            <div>
+                         <div id="signincard" [style.display]="signincard ? 'block' : 'none'">
                                 <div class="form-group row">
                                         <label for="email" class="col-sm-3 col-form-label col-form-label-sm"><strong>Email ID:</strong></label>
                                         <div class="col-sm-9">
-                                            <input type="email" class="form-control" name="email" id="email" required [(ngModel)] ="email" #emailVar="ngModel"
+                                            <input type="email" email class="form-control" name="email" id="email" required [(ngModel)] ="email" #emailVar="ngModel"
                                             [ngClass]="{'is-invalid':(emailVar.touched || emailVar.dirty) && !emailVar.valid }"/>
                                             <span class="invalid-feedback">
                                                 <span *ngIf="emailVar.errors?.required">
@@ -113,116 +73,22 @@
                                                 <span *ngIf="passwordVar.errors?.required">
                                                     Please enter password.
                                                 </span>
-                                                <span *ngIf="passwordVar.errors?.minlength">
+                                                <!-- <span *ngIf="passwordVar.errors?.minlength">
                                                     Password must be at least 6 characters long.
-                                                </span>
+                                                </span> -->
                                             </span>
                                         </div>
                                     </div>
                                     <button id="btnsignin"class="btn btn-primary" [disabled]="!signinForm.valid">Sign in</button>
                                 </div>
-                            </div>
                     </form>
                     
                     <!-- sign up modal -->
-<!--                     
-                    <diV id="signupcard" [style.display]="signupcard ? 'block' : 'none'">
-                        <div class="card" >
-                            <h5 class="card-header card text-center">Sign up</h5>
-                            <div class="card-body">
-                                <form #signupForm="ngForm" (ngSubmit)="signupUser(signupForm.value)">
-                                    <div class="form-group row">
-                                        <label class="col-sm-3 col-form-label col-form-label-sm">First Name:</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" name="firstName" class="form-control" id="firstName" #firstVar="ngModel" [(ngModel)]="firstName"  required
-                                            [ngClass]="{ 'is-invalid':(firstVar.touched || firstVar.dirty) && !firstVar.valid }" />
-                                            <span class="invalid-feedback">
-                                                <span *ngIf="firstVar.errors?.required">
-                                                   FirstName is required
-                                                </span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-sm-3 col-form-label col-form-label-sm">Last Name:</label>
-                                        <div class="col-sm-9">
-                                            <input type="text"  id="lastName"class="form-control" name="lastName" #lastVar="ngModel" [(ngModel)]="lastName" />
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-sm-3 col-form-label col-form-label-sm">Email ID:</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" name="email" id="email1" class="form-control" #emailVars="ngModel" [(ngModel)]="email"   required 
-                                            [ngClass]="{'is-invalid':(emailVars.touched || emailVars.dirty) && !emailVars.valid }"/>
-                                            <span class="invalid-feedback">
-                                                <span *ngIf="emailVars.errors?.required">
-                                                    Email id is requried.
-                                                </span>
-                                                <span *ngIf="emailVars.errors?.email">
-                                                    please enter a valid email.
-                                                </span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-sm-3 col-form-label col-form-label-sm">Mobile Number:</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" name ="mobile" id="moblie" class="form-control" #mobileVar="ngModel" [(ngModel)]="mobileNumber" required  
-                                            [ngClass]="{ 'is-invalid':(mobileVar.touched || mobileVar.dirty) && !mobileVar.valid }" />
-                                            <span class="invalid-feedback">
-                                                <span *ngIf="mobileVar.errors?.required">
-                                                    Mobile number is requried.
-                                                </span>
-                                                <span *ngIf="mobileVar.errors?.minlength">
-                                                   Mobile must be 10 characters long.
-                                                </span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                         <label class="col-sm-3 col-form-label col-form-label-sm">Password:</label>
-                                        <div class="col-sm-9">
-                                        <input type="password" name="password" id="password1"class="form-control" #passwordVars="ngModel"  required minlength="5" appPasswordPatre
-                                        [(ngModel)]="password"  [ngClass]="{ 'is-invalid':(passwordVars.touched || passwordVars.dirty) && !passwordVars.valid }" />
-                                        <span class="invalid-feedback">
-                                           <span *ngIf="passwordVars.errors?.required">
-                                               Please enter password.
-                                           </span>
-                                           <span *ngIf="passwordVars.errors?.minlength">
-                                           Password should have minimum 5 characters, at least 1 uppercase letter, 1 lowercase
-                                           letter and 1 number
-                                           </span>
-                                       </span>
-                                       
-                                       </div>
-                                   </div>
-                                   <div class="form-group row">
-                                   <label class="col-sm-3 col-form-label col-form-label-sm">Confirm Password:</label>
-                                   <div class="col-sm-9">
-                                       <input type="password" name="confirmPassword" id="confirmPassword"class="form-control" #confirmVar="ngModel" [(ngModel)]="confirmPassword" required  
-                                       [ngClass]="{ 'is-invalid':(confirmVar.touched || confirmVar.dirty) && !confirmVar.valid }" />
-                                       <span class="invalid-feedback">
-                                           <span *ngIf="confirmVar.errors?.required">
-                                               Please enter password.
-                                           </span>
-                                           <span *ngIf="confirmVar.errors?.minlength">
-                                               Password must be at least 6 characters long.
-                                           </span>
-                                       </span>
-                                       
-                                   </div>
-                                   </div>
-                                   <button type="submit" id="btnsignup" class=" btn btn-primary text-center" [disabled]="!signupForm.value">Sign up</button>
-                               </form>
-                           </div>
-                       </div>
-               </diV> -->
-                              
-               <diV id="signupcard" [style.display]="signupcard ? 'block' : 'none'">
-                    <div>
+                
+                <diV id="signupcard" [style.display]="signupcard ? 'block' : 'none'">
                         <form #signupForm="ngForm" (ngSubmit)="signupUser(signupForm.value)">
                             <div class="form-group row">
-                                <label class="col-sm-3 col-form-label col-form-label-sm">First Name:</label>
+                                <label class="col-sm-3 col-form-label col-form-label-sm"><strong>First Name:</strong></label>
                                 <div class="col-sm-9">
                                     <input type="text" name="firstName" class="form-control" id="firstName" #firstVar="ngModel" [(ngModel)]="firstName"  required
                                     [ngClass]="{ 'is-invalid':(firstVar.touched || firstVar.dirty) && !firstVar.valid }" />
@@ -234,15 +100,15 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-3 col-form-label col-form-label-sm">Last Name:</label>
+                                <label class="col-sm-3 col-form-label col-form-label-sm"><strong>Last Name:</strong></label>
                                 <div class="col-sm-9">
                                     <input type="text"  id="lastName"class="form-control" name="lastName" #lastVar="ngModel" [(ngModel)]="lastName" />
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-3 col-form-label col-form-label-sm">Email ID:</label>
+                                <label class="col-sm-3 col-form-label col-form-label-sm"><strong>Email ID:</strong></label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="email" id="email1" class="form-control" #emailVars="ngModel" [(ngModel)]="email"   required 
+                                    <input type="email" email name="email" id="email1" class="form-control" #emailVars="ngModel" [(ngModel)]="email"   required 
                                     [ngClass]="{'is-invalid':(emailVars.touched || emailVars.dirty) && !emailVars.valid }"/>
                                     <span class="invalid-feedback">
                                         <span *ngIf="emailVars.errors?.required">
@@ -255,22 +121,22 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-3 col-form-label col-form-label-sm">Mobile Number:</label>
+                                <label class="col-sm-3 col-form-label col-form-label-sm"><strong>Mobile Number:</strong></label>
                                 <div class="col-sm-9">
-                                    <input type="text" name ="mobile" id="moblie" class="form-control" #mobileVar="ngModel" [(ngModel)]="mobileNumber" required  
-                                    [ngClass]="{ 'is-invalid':(mobileVar.touched || mobileVar.dirty) && !mobileVar.valid }" />
+                                    <input type="text" name ="mobile" id="moblie" class="form-control" #mobileVars="ngModel" [(ngModel)]="mobileNumber" required  maxlength="10" 
+                                    [ngClass]="{ 'is-invalid':(mobileVars.touched || mobileVars.dirty) && !mobileVars.valid }" />
                                     <span class="invalid-feedback">
-                                        <span *ngIf="mobileVar.errors?.required">
+                                        <span *ngIf="mobileVars.errors?.required">
                                             Mobile number is requried.
                                         </span>
-                                        <span *ngIf="mobileVar.errors?.minlength">
+                                        <span *ngIf="mobileVars.errors?.maxlength">
                                            Mobile must be 10 characters long.
                                         </span>
                                     </span>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                 <label class="col-sm-3 col-form-label col-form-label-sm">Password:</label>
+                                 <label class="col-sm-3 col-form-label col-form-label-sm"><strong>Password:</strong></label>
                                 <div class="col-sm-9">
                                 <input type="password" name="password" id="password1"class="form-control" #passwordVars="ngModel"  required minlength="5" appPasswordPatre
                                 [(ngModel)]="password"  [ngClass]="{ 'is-invalid':(passwordVars.touched || passwordVars.dirty) && !passwordVars.valid }" />
@@ -287,16 +153,16 @@
                                </div>
                            </div>
                            <div class="form-group row">
-                           <label class="col-sm-3 col-form-label col-form-label-sm">Confirm Password:</label>
+                           <label class="col-sm-3 col-form-label col-form-label-sm"><strong>Confirm Password:</strong></label>
                            <div class="col-sm-9">
-                               <input type="password" name="confirmPassword" id="confirmPassword"class="form-control" #confirmVar="ngModel" [(ngModel)]="confirmPassword" required  
+                               <input type="password" name="confirmPassword" id="confirmPassword"class="form-control" #confirmVar="ngModel" [(ngModel)]="confirmPassword" minlength="5" required  
                                [ngClass]="{ 'is-invalid':(confirmVar.touched || confirmVar.dirty) && !confirmVar.valid }" />
                                <span class="invalid-feedback">
                                    <span *ngIf="confirmVar.errors?.required">
                                        Please enter password.
                                    </span>
                                    <span *ngIf="confirmVar.errors?.minlength">
-                                       Password must be at least 6 characters long.
+                                       Password must be at least 5 characters long.
                                    </span>
                                </span>
                                
@@ -304,8 +170,7 @@
                            </div>
                            <button type="submit" id="btnsignup" class=" btn btn-primary text-center" [disabled]="!signupForm.value">Sign up</button>
                        </form>
-                   </div>
-       </diV>
+                 </diV>
            </div>
            </div>
        </div> 
