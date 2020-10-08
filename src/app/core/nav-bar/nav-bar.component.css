@@ -95,3 +95,11 @@ input{
      margin-left: 31%;
      width:60%;
  }
+ #signup-tab{
+     border:0;
+     outline: none;
+ }
+ #signin-tab{
+    border:0;
+    outline: none;
+}

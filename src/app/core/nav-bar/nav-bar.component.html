@@ -38,13 +38,22 @@
                     </div>
                     <div class="modal-body">
                         <form (ngSubmit)='onSubmit(signinForm.value)' #signinForm ="ngForm">
-                            <button class="btn btn-primary" (click)="onSigninClick()" id="signin"> sign in</button> 
-                            <button class="btn"  (click)="onSignupClick()"  id="signup" >sign up</button><br/><br/>
+                            <!-- <button class="btn btn-primary" (click)="onSigninClick()" id="signin"> sign in</button> 
+                            <button class="btn"  (click)="onSignupClick()"  id="signup" >sign up</button><br/><br/> -->
+
+                            <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
+                                <li class="nav-item">
+                                  <button class="nav-link active" id="signin-tab"  (click)="onSigninClick()" data-toggle="pill"  role="tab" aria-controls="pills-sign in" aria-selected="true">Sign in</button>
+                                </li>
+                                <li class="nav-item">
+                                  <button class="nav-link" id="signup-tab"  (click)="onSignupClick()" data-toggle="pill"  role="tab" aria-controls="pills-sign up" aria-selected="false">Sign up</button>
+                                </li>
+                            </ul>
                             <!-- signin modal -->
                        
                             <div id="signincard" [style.display]="signincard ? 'block' : 'none'">
                                 <div class="card">
-                                    <h5 class="card-header card text-center">Sign in</h5>
+                                    <h5 class="card-header card text-center" style="height: 30;">Sign in</h5>
                                      <div class="card-body">
                                         <div class="form-group row">
                                             <label for="email" class="col-sm-3 col-form-label col-form-label-sm"><strong>Email ID:</strong></label>
