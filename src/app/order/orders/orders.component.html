@@ -1,3 +1,43 @@
 <p>orders works!</p>
 
+<div class="bs-stepper view">
+    <div class="bs-stepper-header" role="tablist">
+      <!-- your steps here -->
+      <div class="step" data-target="#items-part">
+        <button type="button" class="step-trigger" role="tab" aria-controls="logins-part" id="logins-part-trigger">
+          <span class="bs-stepper-circle">1</span>
+          <span class="bs-stepper-label">items</span>
+        </button>
+      </div>
+      <div class="line"></div>
+      <div class="step" data-target="#Address-part">
+        <button type="button" class="step-trigger" role="tab" aria-controls="Address-part" id="Address-trigger">
+          <span class="bs-stepper-circle">2</span>
+          <span class="bs-stepper-label">Choose Address</span>
+        </button>
+      </div>
+      <div class="line"  style="width:10%"></div>
+      <div class="step" data-target="#reveiw-items-part">
+        <button type="button" class="step-trigger" role="tab" aria-controls="review-items-part" id="review-items-trigger">
+          <span class="bs-stepper-circle">3</span>
+          <span class="bs-stepper-label">Review items</span>
+        </button>
+      </div>
+      <div class="line"></div>
+      <div class="step" data-target="#confirm-order-part">
+        <button type="button" class="step-trigger" role="tab" aria-controls="confirm-order-part" id="confirm-order-trigger">
+          <span class="bs-stepper-circle">4</span>
+          <span class="bs-stepper-label">Confirm Order</span>
+        </button>
+      </div>
+ 
+    </div>
+ 
+    
+</div>
+    <div class="bs-stepper-content">
+      <!-- your steps content here -->
+      <div id="items-part" class="content" role="tabpanel" aria-labelledby="items-part-trigger"></div>
+      <div id="Address-part" class="content" role="tabpanel" aria-labelledby="Address-part-trigger"></div>
+    </div>
 

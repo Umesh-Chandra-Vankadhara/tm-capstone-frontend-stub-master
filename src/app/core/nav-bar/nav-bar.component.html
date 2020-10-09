@@ -123,7 +123,7 @@
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label col-form-label-sm"><strong>Mobile Number:</strong></label>
                                 <div class="col-sm-9">
-                                    <input type="text" name ="mobile" id="moblie" class="form-control" #mobileVars="ngModel" [(ngModel)]="mobileNumber" required  maxlength="10" 
+                                    <input type="text" pattern =""name ="mobile" id="moblie" class="form-control" #mobileVars="ngModel" [(ngModel)]="mobileNumber" required  maxlength="10" 
                                     [ngClass]="{ 'is-invalid':(mobileVars.touched || mobileVars.dirty) && !mobileVars.valid }" />
                                     <span class="invalid-feedback">
                                         <span *ngIf="mobileVars.errors?.required">
@@ -132,6 +132,7 @@
                                         <span *ngIf="mobileVars.errors?.maxlength">
                                            Mobile must be 10 characters long.
                                         </span>
+                                     
                                     </span>
                                 </div>
                             </div>

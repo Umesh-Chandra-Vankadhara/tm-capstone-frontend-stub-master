@@ -10,7 +10,7 @@ const routes: Routes = [
   {path:'orders/create',component:OrdersComponent},
   {path:'home',component:HomeComponent},
   {path:'products',component:ProductsComponent},
-  // {path:'admin-dashboard',component:AdminDashboardComponent},
+ 
 ];
 
 @NgModule({
